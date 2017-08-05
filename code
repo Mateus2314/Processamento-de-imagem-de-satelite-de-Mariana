@@ -1,0 +1,48 @@
+clc
+clear all
+
+G = histeq(imread('C:\Users\User\Documents\Projeto de processamento\depois\LC82170742015316LGN00_B3.TIF'));
+R = histeq(imread('C:\Users\User\Documents\Projeto de processamento\depois\LC82170742015316LGN00_B4.TIF'));
+B =histeq(imread('C:\Users\User\Documents\Projeto de processamento\depois\LC82170742015316LGN00_B2.TIF'));
+
+%G = G(2951:6106, 1695:4809);
+%R = R(2951:6106, 1695:4809);
+%B = B(2951:6106, 1695:4809);
+
+
+RGB543=cat(3,R,G,B);
+
+figure,imshow(RGB543)
+
+%%%%%%%%%%NDVI%%%%%%%%
+%G = double(G);
+%R = double(R);
+%NIR = double(NIR);
+
+%ndvi = (NIR-R)./(NIR+R);
+%figure,imshow(ndvi,[]);
+
+%colormap(gray);
+%colorbar;
+
+%%%%% threshol %%%%%%%
+%[w,h] = size(NIR);
+%acc1 = input('Please Input Threshold Value')
+%for i=1:w
+%    for j=1:h
+%        if ndvi(i,j)>= acc1
+%            Smap(i,j,1)= 65535;
+%            Smap(i,j,2)= 0;
+%            Smap(i,j,3)= 0;
+%        else
+%            Smap(i,j,1)= G(i,j);
+%            Smap(i,j,2)= G(i,j);
+%            Smap(i,j,3)= G(i,j);
+%        end
+%    end
+%end
+%Smap = uint16(Smap);
+%figure,imshow(Smap);
+
+            
+
